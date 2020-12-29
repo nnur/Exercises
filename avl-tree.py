@@ -8,14 +8,19 @@ class Node:
 
 
 class AvlTree:
+
+    root = None
+
+    def insert(self, val):
+        self.root = self.binsert(self.root, val)
     
-    def insert(self, root, val):
+    def binsert(self, root, val):
         if root == None:
             return Node(val)
         elif root.val < val:
-            root.right = self.insert(root.right, val)
+            root.right = self.binsert(root.right, val)
         else:
-            root.left = self.insert(root.left, val)
+            root.left = self.binsert(root.left, val)
 
         root.height = 1 + max(self.height(root.left), 
                            self.height(root.right))
@@ -89,15 +94,14 @@ class AvlTree:
 
 
 myTree = AvlTree() 
-root = None
   
-root = myTree.insert(root, 1) 
-root = myTree.insert(root, 2) 
-root = myTree.insert(root, 4) 
-root = myTree.insert(root, 7) 
-root = myTree.insert(root, 3) 
-root = myTree.insert(root, 5) 
+myTree.insert(1) 
+myTree.insert(2) 
+myTree.insert(4) 
+myTree.insert(7) 
+myTree.insert(3) 
+myTree.insert(5) 
   
 
 print("Preorder traversal") 
-myTree.preOrder(root) 
+myTree.preOrder(myTree.root) 

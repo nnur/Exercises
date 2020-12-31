@@ -1,0 +1,27 @@
+Observer
+
+- An object that has state info (subject), maintains a list of observers.
+Whenever a change occurs in the state, the observers are notified.
+
+Factory
+- The factory is a wrapper that is responsible for instantiating the proper class. 
+The factory might have some additional logic that determines which type of class to make.
+
+Singleton
+- The singleton pattern ensures there's only one instance of something. It stores the instance and always returns
+the same instance when asked.
+
+Dependency Injection
+- Instead of instantiating your own dependencies inside some task specific code, 
+allow them to be passed in from another place. This more central place can control how/what dependencies 
+are created. This achieves inversion of control and helps code be more modular.
+
+Pubsub
+- A messaging pattern for communicating events. There's a list of topics. Publishers can call the pubSub 
+service to publish a topic, when a certain event takes place. 
+The pubSub service notifies the list of subscribers interested in a certain topic. 
+
+Redux
+
+- Changes in store update the info (props) passed to view components. Outside actions (clicks, requests) trigger actions,
+ which trigger reducer to change state based on the action type and payload. 
